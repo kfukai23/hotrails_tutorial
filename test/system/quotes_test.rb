@@ -14,11 +14,9 @@ class QuotesTest < ApplicationSystemTestCase
     # When we click on the link with the text "New quote"
     # we expect to land on a page with the title "New quote"
     click_on "New quote"
-    assert_selector "h1", text: "New quote"
-
-    # When we fill in the name input with "Capybara quote"
-    # and we click on "Create Quote"
     fill_in "Name", with: "Capybara quote"
+
+    assert_selector "h1", text: "Quotes"
     click_on "Create Quote"
 
     # We expect to be back on the page with the title "Quotes"
@@ -39,9 +37,9 @@ class QuotesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Quotes"
 
     click_on "Edit", match: :first
-    assert_selector "h1", text: "Edit quote"
+    fill_in "Name", with: "Quotes"
 
-    fill_in "Name", with: "Updated quote"
+    assert_selector "h1", text: "Edit quote"
     click_on "Update Quote"
 
     assert_selector "h1", text: "Quotes"
