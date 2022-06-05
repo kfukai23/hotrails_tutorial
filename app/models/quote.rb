@@ -1,3 +1,3 @@
 class Quote < ApplicationRecord
-  validates :name, presense: true
+  validates :name, presence: true
 end
