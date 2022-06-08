@@ -18,7 +18,7 @@
 @import "layouts/header";
 
 
-
+// navbar
 .navbar {
   display: flex;
   align-items: center;
@@ -42,5 +42,42 @@
 
   &__right {
     margin-left: auto;
+  }
+}
+
+
+// app/assets/stylesheets/components/_flash.scss
+.flash {
+  position:fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-s);
+
+  max-width: 100%;
+  width: max-content;
+  padding: 0 var(--space-m);
+
+  &__message {
+    font-size: var(--font-size-s);
+    color: var(--color-white);
+    padding: var(--space-xs) var(--space-m);
+    background-color: var(--color-dark);
+    animation: appear-then-fade 4s both; // animation の名前, 開始から終わるまでの時間, 終了時の状態(both: 100%, 0% の状態を両方適用する)
+    border-radius: 999px;
+  }
+}
+
+@keyframes appear-then-fade {
+  // %でタイミングを指定してスタイルを宣言している
+  0%, 100% {
+    opacity:0
+  }
+  5%, 60% {
+    opacity:1
   }
 }
