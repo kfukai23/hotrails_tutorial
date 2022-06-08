@@ -1,0 +1,5 @@
+<%# 第一引数は target　<turbo-stream action="prepend" target="quotes"> という形になる %>
+<%= turbo_stream.prepend "quotes", partial: "quotes/quote", locals: { quote: @quote } %>
+<%# ↑はこう書いても一緒 %>
+<%#= turbo_stream.prepend "quotes", @quote %>
+<%= turbo_stream.update Quote.new, "" %>
