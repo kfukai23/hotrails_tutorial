@@ -67,12 +67,13 @@
     color: var(--color-white);
     padding: var(--space-xs) var(--space-m);
     background-color: var(--color-dark);
-    animation: appear-then-fade 4s both;
+    animation: appear-then-fade 4s both; // animation の名前, 開始から終わるまでの時間, 終了時の状態(both: 100%, 0% の状態を両方適用する)
     border-radius: 999px;
   }
 }
 
 @keyframes appear-then-fade {
+  // %でタイミングを指定してスタイルを宣言している
   0%, 100% {
     opacity:0
   }
