@@ -95,4 +95,14 @@
     margin-bottom: var(--space-l);
     font-weight: bold;
   }
+
+  // https://developer.mozilla.org/ja/docs/Web/CSS/:only-child
+  // 兄弟要素がない要素を指す
+  &--only-child {
+    display: none;
+
+    &:only-child {
+      display: revert;
+    }
+  }
 }
